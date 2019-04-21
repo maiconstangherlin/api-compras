@@ -1,0 +1,14 @@
+D:\Projects\Sig_Sad\ApiCompras\bin\Debug\netcoreapp2.2\ApiCompras.deps.json
+D:\Projects\Sig_Sad\ApiCompras\bin\Debug\netcoreapp2.2\ApiCompras.runtimeconfig.json
+D:\Projects\Sig_Sad\ApiCompras\bin\Debug\netcoreapp2.2\ApiCompras.runtimeconfig.dev.json
+D:\Projects\Sig_Sad\ApiCompras\bin\Debug\netcoreapp2.2\ApiCompras.dll
+D:\Projects\Sig_Sad\ApiCompras\bin\Debug\netcoreapp2.2\ApiCompras.pdb
+D:\Projects\Sig_Sad\ApiCompras\obj\Debug\netcoreapp2.2\ApiCompras.csprojAssemblyReference.cache
+D:\Projects\Sig_Sad\ApiCompras\obj\Debug\netcoreapp2.2\ApiCompras.csproj.CoreCompileInputs.cache
+D:\Projects\Sig_Sad\ApiCompras\obj\Debug\netcoreapp2.2\ApiCompras.RazorAssemblyInfo.cache
+D:\Projects\Sig_Sad\ApiCompras\obj\Debug\netcoreapp2.2\ApiCompras.RazorAssemblyInfo.cs
+D:\Projects\Sig_Sad\ApiCompras\obj\Debug\netcoreapp2.2\ApiCompras.AssemblyInfoInputs.cache
+D:\Projects\Sig_Sad\ApiCompras\obj\Debug\netcoreapp2.2\ApiCompras.AssemblyInfo.cs
+D:\Projects\Sig_Sad\ApiCompras\obj\Debug\netcoreapp2.2\ApiCompras.RazorTargetAssemblyInfo.cache
+D:\Projects\Sig_Sad\ApiCompras\obj\Debug\netcoreapp2.2\ApiCompras.dll
+D:\Projects\Sig_Sad\ApiCompras\obj\Debug\netcoreapp2.2\ApiCompras.pdb
