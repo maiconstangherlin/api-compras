@@ -21,8 +21,13 @@ namespace ApiCompras.Controllers
         [HttpGet]
         public IEnumerable<Produto> Get()
         {
-            //return new string[] { "value1", "value2" };
             return produtoRepository.FindAll();
+        }
+
+        [HttpGet("{id}")]
+        public Produto GetById(int id)
+        {
+            return produtoRepository.FindByID(id);
         }
     }
 

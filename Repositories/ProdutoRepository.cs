@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using ApiCompras.Models;
 using Dapper;
 using Microsoft.Extensions.Configuration;
@@ -22,13 +23,36 @@ namespace ApiCompras.Repositories
             using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
             {
                 dbConnection.Open();
-                return dbConnection.Query<Produto>("SELECT * FROM Produtos");
+                return dbConnection.Query<Produto, TipoProduto, Produto>(
+                    "SELECT * FROM Produto " +
+                    "LEFT JOIN TipoProduto ON Produto.TipoProdutoId = TipoProduto.TipoProdutoId",
+                    map: (produto, tipoProduto) =>
+                    {
+                        produto.TipoProduto = tipoProduto;
+                        return produto;
+                    },
+                    splitOn: "produtoId, tipoProdutoId");
             }
         }
 
         public override Produto FindByID(int id)
         {
-            throw new System.NotImplementedException();
+            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            {
+                dbConnection.Open();
+
+                return dbConnection.Query<Produto, TipoProduto, Produto>(
+                    "SELECT * FROM Produto " +
+                    "LEFT JOIN TipoProduto ON Produto.TipoProdutoId = TipoProduto.TipoProdutoId " +
+                    "WHERE ProdutoId=@produtoId",
+                    map: (produto, tipoProduto) =>
+                    {
+                        produto.TipoProduto = tipoProduto;
+                        return produto;
+                    },
+                    splitOn: "produtoId, tipoProdutoId",
+                    param: new { @produtoId = id }).FirstOrDefault();
+            }
         }
 
         public override void Remove(int id)

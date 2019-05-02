@@ -1,12 +1,11 @@
-using System.ComponentModel.DataAnnotations;
 
 namespace ApiCompras.Models
 {
     public class Produto
     {
-        public int Id { get; set; }
-
-        [Required]
-        public string Nome { get; set; }
+        public int ProdutoId { get; set; }
+        public TipoProduto TipoProduto { get; set; }
+        public string Descricao { get; set; }
+        public float Preco { get; set; }
     }
 }
