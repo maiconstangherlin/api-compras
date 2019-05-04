@@ -28,7 +28,7 @@ namespace ApiCompras.Repositories
                     "LEFT JOIN TipoProduto ON Produto.TipoProdutoId = TipoProduto.TipoProdutoId",
                     map: (produto, tipoProduto) =>
                     {
-                        produto.TipoProduto = tipoProduto;
+                        produto.tipoProduto = tipoProduto;
                         return produto;
                     },
                     splitOn: "produtoId, tipoProdutoId");
@@ -47,7 +47,7 @@ namespace ApiCompras.Repositories
                     "WHERE ProdutoId=@produtoId",
                     map: (produto, tipoProduto) =>
                     {
-                        produto.TipoProduto = tipoProduto;
+                        produto.tipoProduto = tipoProduto;
                         return produto;
                     },
                     splitOn: "produtoId, tipoProdutoId",

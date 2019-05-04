@@ -3,9 +3,9 @@ namespace ApiCompras.Models
 {
     public class Produto
     {
-        public int ProdutoId { get; set; }
-        public TipoProduto TipoProduto { get; set; }
-        public string Descricao { get; set; }
-        public float Preco { get; set; }
+        public int produtoId { get; set; }
+        public TipoProduto tipoProduto { get; set; }
+        public string descricao { get; set; }
+        public float preco { get; set; }
     }
 }
