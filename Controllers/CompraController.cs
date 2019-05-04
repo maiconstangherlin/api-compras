@@ -25,10 +25,16 @@ namespace ApiCompras.Controllers
             return compraRepository.FindAll();
         }
 
-        [HttpPost]
-        public Compra Add([FromBody] Compra compra)
+        [HttpGet("{id}")]
+        public Compra GetById(int id)
         {
-            return new Compra();
+            return compraRepository.FindByID(id);
+        }
+
+        [HttpPost]
+        public int Add([FromBody] Compra compra)
+        {
+            return compraRepository.Add(compra);            
         }
 
     }

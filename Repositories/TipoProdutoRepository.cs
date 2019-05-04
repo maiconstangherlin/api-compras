@@ -13,14 +13,14 @@ namespace ApiCompras.Repositories
     {
         public TipoProdutoRepository(IConfiguration configuration) : base(configuration) { }
 
-        public override void Add(TipoProduto item)
+        public override int Add(TipoProduto item)
         {
             throw new System.NotImplementedException();
         }
 
         public override IEnumerable<TipoProduto> FindAll()
         {
-            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            using (IDbConnection dbConnection = new SqlConnection(connectionString))
             {
                 dbConnection.Open();
                 return dbConnection.Query<TipoProduto>("SELECT * FROM TipoProduto");
@@ -29,7 +29,7 @@ namespace ApiCompras.Repositories
 
         public override TipoProduto FindByID(int id)
         {
-            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            using (IDbConnection dbConnection = new SqlConnection(connectionString))
             {
                 dbConnection.Open();
                 return dbConnection.QueryFirstOrDefault<TipoProduto>(

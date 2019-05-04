@@ -13,14 +13,14 @@ namespace ApiCompras.Repositories
     {
         public ProdutoRepository(IConfiguration configuration) : base(configuration) { }
 
-        public override void Add(Produto item)
+        public override int Add(Produto item)
         {
             throw new System.NotImplementedException();
         }
 
         public override IEnumerable<Produto> FindAll()
         {
-            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            using (IDbConnection dbConnection = new SqlConnection(connectionString))
             {
                 dbConnection.Open();
                 return dbConnection.Query<Produto, TipoProduto, Produto>(
@@ -37,7 +37,7 @@ namespace ApiCompras.Repositories
 
         public override Produto FindByID(int id)
         {
-            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            using (IDbConnection dbConnection = new SqlConnection(connectionString))
             {
                 dbConnection.Open();
 
